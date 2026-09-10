@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             RoxFollowTheme {
-                AppRoot()
+                AppRoot(rewardedAdManager = unityRewardedAdManager)
             }
         }
     }
