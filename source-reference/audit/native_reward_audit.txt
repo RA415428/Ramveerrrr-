@@ -1,0 +1,36 @@
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:8:class FirebaseAuthManager {
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:10:    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:72:    fun authInstance(): FirebaseAuth {
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:3:import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:4:import com.google.firebase.auth.FirebaseAuthInvalidUserException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:5:import com.google.firebase.auth.FirebaseAuthUserCollisionException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:13:            is FirebaseAuthInvalidUserException ->
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:16:            is FirebaseAuthInvalidCredentialsException ->
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:19:            is FirebaseAuthUserCollisionException ->
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:19:    private val db = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:8:    private val db = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:9:    private val auth = FirebaseAuth.getInstance()
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:6:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:34:            FirebaseAuth.getInstance().currentUser
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:16:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:23:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:31:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:46:        FirebaseAuth
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:7:    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:9:    suspend fun getCoinsPerRewardAd(): Int {
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:16:        val direct = (snapshot.get("coinsPerRewardAd") as? Number)?.toInt()
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:20:        val nested = (ads?.get("coinsPerRewardAd") as? Number)?.toInt()
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:4:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:10:    suspend fun getCoinsPerRewardAd(): Int {
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:12:        val direct = (snapshot.get("coinsPerRewardAd") as? Number)?.toInt()
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:15:        return (ads?.get("coinsPerRewardAd") as? Number)?.toInt() ?: 0
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:17:    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:33:            .collection("coinTransactions")
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:57:                        "type" to "rewarded_ad",
+app/src/main/java/com/roxfollow/app/rewards/RewardedAdController.kt:37:            val coins = rewardService.getCoinsPerRewardAd()

@@ -1,0 +1,51 @@
+app/src/main/java/com/roxfollow/app/MainActivity.kt:38:            memberIdProvider = {
+app/src/main/java/com/roxfollow/app/MainActivity.kt:39:                getSharedPreferences("rox_follow_auth", MODE_PRIVATE)
+app/src/main/java/com/roxfollow/app/MainActivity.kt:40:                    .getString("memberId", "") ?: ""
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:8:    val memberId: String?
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:23:        memberId: String?
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:27:            .getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:31:            .putString(KEY_MEMBER_ID, memberId)
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:39:            context.getSharedPreferences(
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:47:            memberId = prefs.getString(KEY_MEMBER_ID, null)
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:55:            .getSharedPreferences(
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:8:    val memberId: String? = null,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:43:    suspend fun getUser(memberId: String): NativeUserData? {
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:45:            .document(memberId)
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:54:        memberId: String,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:68:            .document(memberId)
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:77:        val memberId = (data["memberId"] as? String)?.ifBlank { null }
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:86:            memberId = memberId,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:10:    suspend fun resolveMemberId(uid: String, email: String?): String? {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:18:        val authMemberId = authDoc.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:19:        if (!authMemberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:20:            return authMemberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:32:            val emailMemberId = emailDoc.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:33:            if (!emailMemberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:34:                return emailMemberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:45:            val memberId = userDoc?.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:48:            if (!memberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:49:                return memberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:56:    suspend fun loadUser(memberId: String): NativeUserData? {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:57:        return FirestoreUserManager().getUser(memberId)
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:61:        memberId: String,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:67:            memberId = memberId,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:75:            "memberId" to memberId,
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:47:                memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:54:                    memberId = memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:127:                memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:134:                    memberId = memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:159:            memberId = session.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:176:    val memberId: String?
+app/src/main/java/com/roxfollow/app/auth/AuthUiState.kt:8:    val memberId: String? = null,
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:49:                memberId = saved.memberId
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:95:                            memberId = it.memberId
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:148:                            memberId = it.memberId
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:37:    fun memberId(): String? {
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:41:            .memberId
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:21:        memberId: String,
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:24:        if (memberId.isBlank() || coinsToAdd <= 0) return false
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:28:            .document(memberId)
+app/src/main/java/com/roxfollow/app/rewards/FirestoreRewardService.kt:55:                        "memberId" to memberId,
+app/src/main/java/com/roxfollow/app/rewards/RewardedAdController.kt:11:    private val memberIdProvider: () -> String,
+app/src/main/java/com/roxfollow/app/rewards/RewardedAdController.kt:34:        val memberId = memberIdProvider()
+app/src/main/java/com/roxfollow/app/rewards/RewardedAdController.kt:41:                    rewardService.rewardUser(memberId, coins)
