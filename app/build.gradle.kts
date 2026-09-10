@@ -35,5 +35,4 @@ implementation("com.google.firebase:firebase-firestore")
     implementation("com.unity3d.ads:unity-ads:4.19.0")
 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
 
-    debugImplementation("androidx.compose.ui:ui-tooling")
 }
