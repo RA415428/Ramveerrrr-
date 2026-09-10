@@ -2,19 +2,24 @@ package com.roxfollow.app.rewards
 
 import android.os.SystemClock
 
-class RewardCooldown(
-    private val durationMs: Long = 10_000L
-) {
-    private var untilElapsed = 0L
+class RewardCooldown {
+    companion object {
+        private const val COOLDOWN_MS = 10_000L
+    }
+
+    private var cooldownUntil = 0L
 
     fun start() {
-        untilElapsed = SystemClock.elapsedRealtime() + durationMs
+        cooldownUntil = SystemClock.elapsedRealtime() + COOLDOWN_MS
     }
 
     fun remainingSeconds(): Int {
-        val remaining = untilElapsed - SystemClock.elapsedRealtime()
-        if (remaining <= 0L) return 0
-        return ((remaining + 999L) / 1000L).toInt()
+        val remaining = cooldownUntil - SystemClock.elapsedRealtime()
+        return if (remaining > 0) {
+            ((remaining + 999) / 1000).toInt()
+        } else {
+            0
+        }
     }
 
     fun isActive(): Boolean = remainingSeconds() > 0
