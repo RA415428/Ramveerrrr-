@@ -6,6 +6,14 @@ import kotlinx.coroutines.tasks.await
 import java.util.UUID
 
 class FirestoreRewardService(
+
+    suspend fun getCoinsPerRewardAd(): Int {
+        val snapshot = firestore.collection("config").document("global").get().await()
+        val direct = (snapshot.get("coinsPerRewardAd") as? Number)?.toInt()
+        if (direct != null && direct > 0) return direct
+        val ads = snapshot.get("ads") as? Map<*, *>
+        return (ads?.get("coinsPerRewardAd") as? Number)?.toInt() ?: 0
+    }
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 ) {
 
