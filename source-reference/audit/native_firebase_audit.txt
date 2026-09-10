@@ -1,0 +1,99 @@
+app/src/main/java/com/roxfollow/app/ui/screens/LoginScreen.kt:88:                    text = "+50 Free Coins on Sign Up",
+app/src/main/java/com/roxfollow/app/ui/screens/CoinsScreen.kt:15:fun CoinsScreen(
+app/src/main/java/com/roxfollow/app/ui/screens/CoinsScreen.kt:31:            Text("Watch Ad + Coins")
+app/src/main/java/com/roxfollow/app/ui/AppRoot.kt:5:import com.roxfollow.app.ui.screens.CoinsScreen
+app/src/main/java/com/roxfollow/app/ui/AppRoot.kt:13:        CoinsScreen(
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:8:class FirebaseAuthManager {
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:10:    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/FirebaseAuthManager.kt:72:    fun authInstance(): FirebaseAuth {
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:3:import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:4:import com.google.firebase.auth.FirebaseAuthInvalidUserException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:5:import com.google.firebase.auth.FirebaseAuthUserCollisionException
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:13:            is FirebaseAuthInvalidUserException ->
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:16:            is FirebaseAuthInvalidCredentialsException ->
+app/src/main/java/com/roxfollow/app/firebase/AuthErrorMapper.kt:19:            is FirebaseAuthUserCollisionException ->
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:8:    val memberId: String?
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:23:        memberId: String?
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:31:            .putString(KEY_MEMBER_ID, memberId)
+app/src/main/java/com/roxfollow/app/firebase/AuthSession.kt:47:            memberId = prefs.getString(KEY_MEMBER_ID, null)
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:8:    val memberId: String? = null,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:11:    val coins: Long = 0L,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:19:    private val db = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:22:        val snapshot = db.collection("users")
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:28:        val doc = snapshot.documents.firstOrNull() ?: return null
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:29:        return fromDocument(doc.id, doc.data ?: emptyMap())
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:33:        val snapshot = db.collection("users")
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:39:        val doc = snapshot.documents.firstOrNull() ?: return null
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:40:        return fromDocument(doc.id, doc.data ?: emptyMap())
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:43:    suspend fun getUser(memberId: String): NativeUserData? {
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:44:        val doc = db.collection("users")
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:45:            .document(memberId)
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:50:        return fromDocument(doc.id, doc.data ?: emptyMap())
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:54:        memberId: String,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:67:        db.collection("users")
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:68:            .document(memberId)
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:73:    private fun fromDocument(
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:74:        documentId: String,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:77:        val memberId = (data["memberId"] as? String)?.ifBlank { null }
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:78:            ?: documentId
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:80:        val coins = when (val value = data["coins"]) {
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:86:            memberId = memberId,
+app/src/main/java/com/roxfollow/app/firebase/FirestoreUserManager.kt:89:            coins = coins,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:8:    private val db = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:10:    suspend fun resolveMemberId(uid: String, email: String?): String? {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:13:        val authDoc = db.collection("users_auth")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:14:            .document(uid)
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:18:        val authMemberId = authDoc.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:19:        if (!authMemberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:20:            return authMemberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:27:            val emailDoc = db.collection("email_accounts")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:28:                .document(safeEmail)
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:32:            val emailMemberId = emailDoc.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:33:            if (!emailMemberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:34:                return emailMemberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:37:            // 3. Existing user document by email
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:38:            val userQuery = db.collection("users")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:44:            val userDoc = userQuery.documents.firstOrNull()
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:45:            val memberId = userDoc?.getString("memberId")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:48:            if (!memberId.isNullOrBlank()) {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:49:                return memberId
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:56:    suspend fun loadUser(memberId: String): NativeUserData? {
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:57:        return FirestoreUserManager().getUser(memberId)
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:61:        memberId: String,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:67:            memberId = memberId,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:73:        // Keep the existing users_auth collection compatible.
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:75:            "memberId" to memberId,
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:83:        db.collection("users_auth")
+app/src/main/java/com/roxfollow/app/firebase/NativeUserRepository.kt:84:            .document(uid)
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:9:    private val auth = FirebaseAuth.getInstance()
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:47:                memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:54:                    memberId = memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:127:                memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:134:                    memberId = memberUser?.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:159:            memberId = session.memberId
+app/src/main/java/com/roxfollow/app/firebase/AuthCoordinator.kt:176:    val memberId: String?
+app/src/main/java/com/roxfollow/app/auth/AuthUiState.kt:8:    val memberId: String? = null,
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:6:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:34:            FirebaseAuth.getInstance().currentUser
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:49:                memberId = saved.memberId
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:95:                            memberId = it.memberId
+app/src/main/java/com/roxfollow/app/auth/AuthViewModel.kt:148:                            memberId = it.memberId
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:4:import com.google.firebase.auth.FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:16:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:23:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:31:        return FirebaseAuth
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:37:    fun memberId(): String? {
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:41:            .memberId
+app/src/main/java/com/roxfollow/app/session/NativeSessionManager.kt:46:        FirebaseAuth
+app/src/main/java/com/roxfollow/app/rewards/RewardResult.kt:4:    data class Success(val coins: Int) : RewardResult()
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:3:import com.google.firebase.firestore.FirebaseFirestore
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:7:    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:9:    suspend fun getCoinsPerRewardAd(): Int {
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:11:            .collection("config")
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:12:            .document("global")
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:16:        val direct = (snapshot.get("coinsPerRewardAd") as? Number)?.toInt()
+app/src/main/java/com/roxfollow/app/rewards/NativeRewardRepository.kt:20:        val nested = (ads?.get("coinsPerRewardAd") as? Number)?.toInt()

@@ -1,0 +1,384 @@
+source-reference/src/types/index.ts:9:  memberId: string;
+source-reference/src/types/index.ts:35:  memberId: string;
+source-reference/src/types/index.ts:116:  userMemberId?: string;
+source-reference/src/types/index.ts:122:  userMemberId?: string;
+source-reference/src/types/index.ts:267:  userMemberId: string;
+source-reference/src/types/index.ts:330:  userMemberId: string;
+source-reference/src/components/Admin/AdminOverview.tsx:206:            const userKey = u.memberId ? `ov-usr-${u.memberId}-${uIdx}` : `ov-usr-${u.id || uIdx}-${uIdx}`;
+source-reference/src/components/Admin/AdminOverview.tsx:230:                      {u.memberId}
+source-reference/src/components/Admin/AdminOverview.tsx:399:                      #{ord.userMemberId || '100001'}
+source-reference/src/components/Admin/AdminOrders.tsx:145:    const ordMemberId = String(ord.userMemberId || '');
+source-reference/src/components/Admin/AdminOrders.tsx:151:      ordMemberId.toLowerCase().includes(q) ||
+source-reference/src/components/Admin/AdminOrders.tsx:260:                          #{ord.userMemberId || '100001'}
+source-reference/src/components/Admin/AdminOrders.tsx:403:              <span className="text-purple-400 font-bold">#{selectedLog.userMemberId || '100001'}</span>
+source-reference/src/components/Admin/AdminUsers.tsx:38:    return Boolean(u.memberId || u.id || u.email);
+source-reference/src/components/Admin/AdminUsers.tsx:101:    const cleanMemberId = String(targetUser.memberId || targetUser.id || '').replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/components/Admin/AdminUsers.tsx:102:    if (!cleanMemberId) return { success: false, error: 'Invalid Member ID' };
+source-reference/src/components/Admin/AdminUsers.tsx:109:      await setDoc(doc(db, 'users', cleanMemberId), updateData, { merge: true });
+source-reference/src/components/Admin/AdminUsers.tsx:112:      deleteDoc(doc(db, 'users', `usr_${cleanMemberId}`)).catch(() => {});
+source-reference/src/components/Admin/AdminUsers.tsx:113:      deleteDoc(doc(db, 'users', `#${cleanMemberId}`)).catch(() => {});
+source-reference/src/components/Admin/AdminUsers.tsx:114:      if (targetUser.id && targetUser.id !== cleanMemberId) {
+source-reference/src/components/Admin/AdminUsers.tsx:127:          memberId: cleanMemberId,
+source-reference/src/components/Admin/AdminUsers.tsx:128:          id: targetUser.id || `usr_${cleanMemberId}`,
+source-reference/src/components/Admin/AdminUsers.tsx:129:          name: targetUser.name || targetUser.displayName || `User #${cleanMemberId}`,
+source-reference/src/components/Admin/AdminUsers.tsx:140:          memberId: cleanMemberId,
+source-reference/src/components/Admin/AdminUsers.tsx:141:          id: targetUser.id || `usr_${cleanMemberId}`,
+source-reference/src/components/Admin/AdminUsers.tsx:158:    const targetUser = users.find((u) => u.id === userId || u.memberId === userId);
+source-reference/src/components/Admin/AdminUsers.tsx:176:      if (u.id === userId || u.memberId === userId) {
+source-reference/src/components/Admin/AdminUsers.tsx:186:    const targetUser = users.find((u) => u.id === userId || u.memberId === userId);
+source-reference/src/components/Admin/AdminUsers.tsx:204:      if (u.id === userId || u.memberId === userId) {
+source-reference/src/components/Admin/AdminUsers.tsx:214:    const targetUser = users.find((u) => u.id === userId || u.memberId === userId);
+source-reference/src/components/Admin/AdminUsers.tsx:233:      if (u.id === userId || u.memberId === userId) {
+source-reference/src/components/Admin/AdminUsers.tsx:268:    const memberId = String(u.memberId || '');
+source-reference/src/components/Admin/AdminUsers.tsx:272:      memberId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+source-reference/src/components/Admin/AdminUsers.tsx:357:          const cleanUMem = String(u.memberId || '').replace(/^#+/, '').trim();
+source-reference/src/components/Admin/AdminUsers.tsx:360:            const cleanOMem = String(o.userMemberId || '').replace(/^#+/, '').trim();
+source-reference/src/components/Admin/AdminUsers.tsx:372:          const userKey = u.memberId ? `usr-item-${u.memberId}-${uIdx}` : `usr-item-${u.id || uIdx}-${uIdx}`;
+source-reference/src/components/Admin/AdminUsers.tsx:416:                        #{u.memberId}
+source-reference/src/components/Admin/AdminPayment.tsx:101:      r.userMemberId.includes(searchQuery) || 
+source-reference/src/components/Admin/AdminPayment.tsx:367:                        #{req.userMemberId}
+source-reference/src/components/Admin/AdminReferrals.tsx:321:            <p className="text-[10px] text-slate-500">Append karega: ?ref=[MemberId]</p>
+source-reference/src/components/Admin/AdminReferrals.tsx:355:                  <tr key={ref.memberId} className="hover:bg-slate-800/40 transition-colors">
+source-reference/src/components/Admin/AdminReferrals.tsx:359:                      <span className="text-[10px] text-slate-500 font-mono">#{ref.memberId}</span>
+source-reference/src/components/PaymentModal.tsx:75:  const userMemberId = userWallet?.memberId || '100001';
+source-reference/src/components/PaymentModal.tsx:78:  const upiPayString = `upi://pay?pa=${encodeURIComponent(merchantUpiId)}&pn=${encodeURIComponent(merchantName)}&am=${amountNum}&cu=INR&tn=${encodeURIComponent(`Buy_${pkg.coins}_Coins_Member_${userMemberId}`)}`;
+source-reference/src/components/PaymentModal.tsx:94:    const note = encodeURIComponent(`Buy_${pkg.coins}_Coins_User_${userMemberId}`);
+source-reference/src/components/PaymentModal.tsx:156:      userMemberId,
+source-reference/src/components/PaymentModal.tsx:157:      userName: `User #${userMemberId}`,
+source-reference/src/components/ReferralModal.tsx:59:  const memberId = wallet.memberId || '100001';
+source-reference/src/components/ReferralModal.tsx:60:  const displayId = `#${memberId}`;
+source-reference/src/components/ReferralModal.tsx:61:  const userReferralCode = wallet.referralCode || `ROX${memberId}`;
+source-reference/src/components/ReferralModal.tsx:67:  const referralLink = `${cleanBaseUrl}?ref=${memberId}`;
+source-reference/src/components/ReferralModal.tsx:71:    fetchUserReferralHistory(memberId).then((data) => {
+source-reference/src/components/ReferralModal.tsx:81:  }, [isOpen, memberId, wallet.totalReferralsCount, wallet.totalReferralCoinsEarned]);
+source-reference/src/components/ReferralModal.tsx:107:    traceReferralClick(memberId);
+source-reference/src/components/ReferralModal.tsx:128:    traceReferralClick(memberId);
+source-reference/src/components/ReferralModal.tsx:141:    traceReferralClick(memberId);
+source-reference/src/components/ReferralModal.tsx:158:    if (cleanInput === memberId) {
+source-reference/src/components/ReferralModal.tsx:167:      const res = await claimReferralBonus(cleanInput, memberId);
+source-reference/src/components/TopBar.tsx:49:                ID: <span className="font-mono text-amber-400 font-bold">#{wallet.memberId}</span>
+source-reference/src/App.tsx:71:  restoreUserByMemberId,
+source-reference/src/App.tsx:207:      if (res.restored && res.memberId) {
+source-reference/src/App.tsx:212:        setToastMsg(`🎉 Account #${res.memberId} auto-restored! (${res.coins || 0} Coins)`);
+source-reference/src/App.tsx:216:      const activeMemberId = res.memberId || wallet.memberId;
+source-reference/src/App.tsx:217:      if (activeMemberId) {
+source-reference/src/App.tsx:218:        checkAndAutoClaimReferral(activeMemberId).then((claimResult) => {
+source-reference/src/App.tsx:275:      setUserOfflinePresence(wallet.memberId);
+source-reference/src/App.tsx:289:        const cleanMyMemberId = String(wallet.memberId || '').replace(/^#+/, '').trim();
+source-reference/src/App.tsx:292:          const cleanUMem = String(u.memberId || '').replace(/^#+/, '').trim();
+source-reference/src/App.tsx:293:          if (cleanMyMemberId && cleanUMem === cleanMyMemberId) return true;
+source-reference/src/App.tsx:332:              if (u.memberId === wallet.memberId) {
+source-reference/src/App.tsx:368:      wallet.memberId,
+source-reference/src/App.tsx:381:  }, [wallet.memberId]);
+source-reference/src/App.tsx:409:    if (!wallet.memberId) return;
+source-reference/src/App.tsx:413:    checkAndApplyBranchDeferredAttribution(wallet.memberId, (msg, bonusCoins) => {
+source-reference/src/App.tsx:422:  }, [wallet.memberId, wallet.referralClaimed]);
+source-reference/src/App.tsx:491:    // Check if user returned via Custom Scheme or Deep Link with memberId
+source-reference/src/App.tsx:492:    const extMemberId = urlParams.get('memberId') || urlParams.get('member_id');
+source-reference/src/App.tsx:493:    if (extMemberId) {
+source-reference/src/App.tsx:494:      restoreUserByMemberId(extMemberId).then((res) => {
+source-reference/src/App.tsx:498:          handleShowToast(res.message || `🎉 Welcome back #${res.wallet.memberId}!`);
+source-reference/src/App.tsx:609:    const cleanMem = String(walletWithMutation.memberId).replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/App.tsx:621:        if (u.memberId === walletWithMutation.memberId) {
+source-reference/src/App.tsx:635:          id: `usr_${walletWithMutation.memberId}`,
+source-reference/src/App.tsx:636:          memberId: walletWithMutation.memberId,
+source-reference/src/App.tsx:637:          name: `User #${walletWithMutation.memberId}`,
+source-reference/src/App.tsx:662:    const activeUserInList = newUsers.find((u) => u.memberId === wallet.memberId);
+source-reference/src/App.tsx:778:      detail: `Member #${wallet.memberId} claimed ${isVideoAd ? 'AdMob video' : 'Picture Banner'} (+${earnedCoins} Coins)`,
+source-reference/src/App.tsx:780:      userMemberId: wallet.memberId,
+source-reference/src/App.tsx:892:      detail: `Member #${wallet.memberId} bought +${coinsBought} Coins`,
+source-reference/src/App.tsx:894:      userMemberId: wallet.memberId,
+source-reference/src/App.tsx:901:    const activeMemberId = String(newOrder.userMemberId || wallet.memberId || '100001').trim();
+source-reference/src/App.tsx:912:    // 2. Prepend order with verified userMemberId and full user metadata
+source-reference/src/App.tsx:915:      userMemberId: activeMemberId,
+source-reference/src/App.tsx:957:      detail: `Member #${activeMemberId} ordered ${finalOrder.quantity} ${finalOrder.serviceType} (${finalOrder.coinsSpent} Coins) [Order #${finalOrder.id}]`,
+source-reference/src/App.tsx:959:      userMemberId: activeMemberId,
+source-reference/src/App.tsx:967:        if (u.memberId === activeMemberId) {
+source-reference/src/App.tsx:984:          id: `usr_${activeMemberId}`,
+source-reference/src/App.tsx:985:          memberId: activeMemberId,
+source-reference/src/App.tsx:986:          name: `User #${activeMemberId}`,
+source-reference/src/App.tsx:1032:  const userOrders = orders.filter((o) => o.userMemberId === wallet.memberId);
+source-reference/src/App.tsx:1149:  const cleanActiveMemberId = String(wallet.memberId || '').replace(/^#+/, '').trim();
+source-reference/src/App.tsx:1152:    const cleanUMem = String(u.memberId || '').replace(/^#+/, '').trim();
+source-reference/src/App.tsx:1153:    if (cleanActiveMemberId && cleanUMem === cleanActiveMemberId) return true;
+source-reference/src/App.tsx:1165:          memberId={wallet.memberId}
+source-reference/src/App.tsx:1177:                u.memberId === wallet.memberId ? { ...u, status: 'ACTIVE' as const } : u
+source-reference/src/App.tsx:1217:              <span>🎉 Logged in as #{wallet.memberId}!</span>
+source-reference/src/App.tsx:1220:              href={getAppReturnIntentUrl(wallet.memberId, wallet.email)}
+source-reference/src/App.tsx:1285:              orders={orders.filter((o) => o.userMemberId === wallet.memberId)}
+source-reference/src/App.tsx:1353:          userId={wallet.memberId}
+source-reference/src/utils/branch.ts:10:  memberId: string;
+source-reference/src/utils/branch.ts:17:  memberId: string, 
+source-reference/src/utils/branch.ts:21:  const cleanId = String(memberId).trim();
+source-reference/src/utils/branch.ts:42:        memberId: cleanId,
+source-reference/src/utils/branch.ts:67:export function recordBranchClick(referrerMemberId: string) {
+source-reference/src/utils/branch.ts:69:    const cleanId = String(referrerMemberId).trim();
+source-reference/src/utils/branch.ts:76:        referrerMemberId: cleanId,
+source-reference/src/utils/branch.ts:89:  currentMemberId: string,
+source-reference/src/utils/branch.ts:91:): Promise<{ success: boolean; referrerMemberId?: string; message?: string }> {
+source-reference/src/utils/branch.ts:92:  if (!currentMemberId) return { success: false };
+source-reference/src/utils/branch.ts:109:      if (refParam && refParam !== currentMemberId) {
+source-reference/src/utils/branch.ts:116:      const checkRes = await fetch(getApiUrl(`/api/branch/check-attribution?memberId=${encodeURIComponent(currentMemberId)}`), {
+source-reference/src/utils/branch.ts:120:      if (checkRes && checkRes.hasAttribution && checkRes.referrerMemberId) {
+source-reference/src/utils/branch.ts:121:        referrerToClaim = String(checkRes.referrerMemberId).trim();
+source-reference/src/utils/branch.ts:126:    if (referrerToClaim && referrerToClaim !== currentMemberId) {
+source-reference/src/utils/branch.ts:128:      const claimResult = await claimReferralBonus(referrerToClaim, currentMemberId);
+source-reference/src/utils/branch.ts:138:          referrerMemberId: referrerToClaim,
+source-reference/src/utils/storage.ts:27:  memberId: string,
+source-reference/src/utils/storage.ts:30:  const cleanId = String(memberId).replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/utils/storage.ts:465:        if (!u || (!u.memberId && !u.id)) return;
+source-reference/src/utils/storage.ts:518:        const validUsers = data.users.filter((u: any) => u && (u.memberId || u.id));
+source-reference/src/utils/storage.ts:620:export async function initAutoDeviceRestore(): Promise<{ restored: boolean; memberId?: string; coins?: number }> {
+source-reference/src/utils/storage.ts:623:    const hasMemberId = localStorage.getItem('roxyefollow_user_member_id');
+source-reference/src/utils/storage.ts:626:    if (hasLocalWallet && hasMemberId) {
+source-reference/src/utils/storage.ts:635:    let restoredMemberId: string | null = null;
+source-reference/src/utils/storage.ts:637:      restoredMemberId = deviceSnap.data()?.memberId || null;
+source-reference/src/utils/storage.ts:641:    if (!restoredMemberId) {
+source-reference/src/utils/storage.ts:648:          if (data && data.memberId) {
+source-reference/src/utils/storage.ts:649:            restoredMemberId = data.memberId;
+source-reference/src/utils/storage.ts:657:    if (restoredMemberId) {
+source-reference/src/utils/storage.ts:659:      const userRef = doc(db, 'users', restoredMemberId);
+source-reference/src/utils/storage.ts:683:        memberId: restoredMemberId,
+source-reference/src/utils/storage.ts:684:        referralCode: uData.referralCode || `ROX${restoredMemberId}`,
+source-reference/src/utils/storage.ts:704:      localStorage.setItem('roxyefollow_user_member_id', restoredMemberId);
+source-reference/src/utils/storage.ts:709:        const qOrders = query(collection(db, 'orders'), where('userMemberId', '==', restoredMemberId), limit(100));
+source-reference/src/utils/storage.ts:729:      console.log(`🎉 Account #${restoredMemberId} auto-restored from Firebase!`);
+source-reference/src/utils/storage.ts:731:      return { restored: true, memberId: restoredMemberId, coins };
+source-reference/src/utils/storage.ts:742:export async function restoreAccountByMemberId(targetMemberId: string): Promise<{ success: boolean; message: string; wallet?: UserWallet }> {
+source-reference/src/utils/storage.ts:744:    const cleanId = targetMemberId.replace('#', '').trim();
+source-reference/src/utils/storage.ts:759:      memberId: cleanId,
+source-reference/src/utils/storage.ts:766:    localStorage.setItem('roxyefollow_user_member_id', cleanId);
+source-reference/src/utils/storage.ts:776:          if (o.userMemberId === cleanId) {
+source-reference/src/utils/storage.ts:793:    setDoc(doc(db, 'devices', fp), { memberId: cleanId, updatedAt: Date.now() }, { merge: true }).catch(() => {});
+source-reference/src/utils/storage.ts:880:  if (!wallet || !wallet.memberId) {
+source-reference/src/utils/storage.ts:884:  const cleanMemberId = String(wallet.memberId).replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/utils/storage.ts:885:  if (!cleanMemberId) return;
+source-reference/src/utils/storage.ts:891:    const userRef = doc(db, 'users', cleanMemberId);
+source-reference/src/utils/storage.ts:892:    const path = `users/${cleanMemberId}`;
+source-reference/src/utils/storage.ts:921:      // 3. Adopt remote memberId if admin changed it
+source-reference/src/utils/storage.ts:922:      if (existingData.memberId) {
+source-reference/src/utils/storage.ts:923:        const remoteMemId = String(existingData.memberId).replace(/^#+/, '').trim();
+source-reference/src/utils/storage.ts:924:        if (remoteMemId && remoteMemId !== wallet.memberId) {
+source-reference/src/utils/storage.ts:925:          wallet.memberId = remoteMemId;
+source-reference/src/utils/storage.ts:926:          localStorage.setItem('roxyefollow_user_member_id', remoteMemId);
+source-reference/src/utils/storage.ts:955:        // ONLY update coins & dailyAdsWatched. NEVER overwrite status, memberId, or settings!
+source-reference/src/utils/storage.ts:970:        // ONLY update online presence. NEVER touch coins, status, memberId, or settings!
+source-reference/src/utils/storage.ts:985:      const initialName = wallet.displayName || (wallet.email ? wallet.email.split('@')[0] : `User #${cleanMemberId}`);
+source-reference/src/utils/storage.ts:987:        id: `usr_${cleanMemberId}`,
+source-reference/src/utils/storage.ts:988:        userId: `#${cleanMemberId}`,
+source-reference/src/utils/storage.ts:989:        memberId: cleanMemberId,
+source-reference/src/utils/storage.ts:990:        email: wallet.email || `${cleanMemberId}@guest.user`,
+source-reference/src/utils/storage.ts:992:        authUid: wallet.authUid || cleanMemberId,
+source-reference/src/utils/storage.ts:1021:    setDoc(doc(db, 'devices', fp), { memberId: cleanMemberId, updatedAt: Date.now() }, { merge: true }).catch(() => {});
+source-reference/src/utils/storage.ts:1029:          memberId: cleanMemberId,
+source-reference/src/utils/storage.ts:1046:export function setUserOfflinePresence(memberId: string): void {
+source-reference/src/utils/storage.ts:1047:  if (!memberId) return;
+source-reference/src/utils/storage.ts:1049:    const userRef = doc(db, 'users', memberId);
+source-reference/src/utils/storage.ts:1066:      body: JSON.stringify({ memberId })
+source-reference/src/utils/storage.ts:1082:  currentMemberId?: string,
+source-reference/src/utils/storage.ts:1155:    const currentCleanId = String(currentMemberId || currentWallet.memberId || '').replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/utils/storage.ts:1186:      const userCleanId = String(u.memberId || docId).replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/utils/storage.ts:1206:        if (u.memberId) {
+source-reference/src/utils/storage.ts:1207:          const remoteCleanMem = String(u.memberId).replace(/^#+/, '').trim();
+source-reference/src/utils/storage.ts:1208:          if (remoteCleanMem && currentWallet.memberId !== remoteCleanMem) {
+source-reference/src/utils/storage.ts:1209:            currentWallet.memberId = remoteCleanMem;
+source-reference/src/utils/storage.ts:1210:            localStorage.setItem('roxyefollow_user_member_id', remoteCleanMem);
+source-reference/src/utils/storage.ts:1242:          memberId: userCleanId,
+source-reference/src/utils/storage.ts:1284:  const targetCleanDocId = String(currentMemberId || myWallet.memberId || '').replace(/^#+/, '').replace(/^usr_/, '').trim();
+source-reference/src/utils/storage.ts:1360:export function getCurrentMemberId(): string {
+source-reference/src/utils/storage.ts:1362:    const existingId = localStorage.getItem('roxyefollow_user_member_id');
+source-reference/src/utils/storage.ts:1368:      localStorage.setItem('roxyefollow_user_member_id', oldCounter);
+source-reference/src/utils/storage.ts:1372:    const newMemberId = Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/storage.ts:1373:    localStorage.setItem('roxyefollow_user_member_id', newMemberId);
+source-reference/src/utils/storage.ts:1374:    return newMemberId;
+source-reference/src/utils/storage.ts:1388:        const memId = String(parsed.memberId || '');
+source-reference/src/utils/storage.ts:1391:          parsed.memberId = getCurrentMemberId();
+source-reference/src/utils/storage.ts:1402:        if (!parsed.referralCode && parsed.memberId) {
+source-reference/src/utils/storage.ts:1403:          parsed.referralCode = `ROX${parsed.memberId}`;
+source-reference/src/utils/storage.ts:1426:  const assignedMemberId = getCurrentMemberId();
+source-reference/src/utils/storage.ts:1429:    memberId: assignedMemberId,
+source-reference/src/utils/storage.ts:1430:    referralCode: `ROX${assignedMemberId}`,
+source-reference/src/utils/storage.ts:1443:    if (!wallet.referralCode && wallet.memberId) {
+source-reference/src/utils/storage.ts:1444:      wallet.referralCode = `ROX${wallet.memberId}`;
+source-reference/src/utils/storage.ts:1465:    id: `usr_${currentWallet.memberId}`,
+source-reference/src/utils/storage.ts:1466:    memberId: currentWallet.memberId,
+source-reference/src/utils/storage.ts:1467:    name: `User #${currentWallet.memberId}`,
+source-reference/src/utils/storage.ts:1488:          const uMemberId = String(u.memberId || '');
+source-reference/src/utils/storage.ts:1489:          if (uMemberId === currentWallet.memberId) return true;
+source-reference/src/utils/storage.ts:1502:          return !isMock && (!!u.memberId || !!u.id);
+source-reference/src/utils/storage.ts:1507:            const uMemberId = String(u.memberId || '');
+source-reference/src/utils/storage.ts:1508:            if (uMemberId === currentWallet.memberId) {
+source-reference/src/utils/storage.ts:1511:                id: u.id || `usr_${currentWallet.memberId}`,
+source-reference/src/utils/storage.ts:1512:                memberId: currentWallet.memberId,
+source-reference/src/utils/storage.ts:1513:                name: u.name || `User #${currentWallet.memberId}`,
+source-reference/src/utils/storage.ts:1520:              id: u.id || `usr_${u.memberId || Math.random().toString(36).slice(2)}`,
+source-reference/src/utils/storage.ts:1521:              name: u.name || `User #${u.memberId || 'Member'}`
+source-reference/src/utils/storage.ts:1533:export async function checkUserBlockedStatus(memberId: string): Promise<{ isBlocked: boolean; status: 'ACTIVE' | 'BLOCKED' }> {
+source-reference/src/utils/storage.ts:1535:    const rawId = String(memberId).trim();
+source-reference/src/utils/storage.ts:1633:export async function claimReferralBonus(referrerMemberId: string, currentMemberId: string): Promise<{ success: boolean; message: string; rewardCoins?: number; referrerRewardCoins?: number }> {
+source-reference/src/utils/storage.ts:1634:  let cleanReferrer = decodeURIComponent(String(referrerMemberId || '')).trim().replace(/^#+/, '').toUpperCase();
+source-reference/src/utils/storage.ts:1641:  let cleanCurrent = decodeURIComponent(String(currentMemberId || '')).trim().replace(/^#+/, '').toUpperCase();
+source-reference/src/utils/storage.ts:1668:        referrerMemberId: cleanReferrer, 
+source-reference/src/utils/storage.ts:1669:        newMemberId: cleanCurrent,
+source-reference/src/utils/storage.ts:1731:export async function fetchUserReferralHistory(memberId: string): Promise<{
+source-reference/src/utils/storage.ts:1748:  const cleanId = String(memberId || '').trim().replace(/^#+/, '');
+source-reference/src/utils/storage.ts:1775:export async function traceReferralClick(referrerMemberId: string): Promise<void> {
+source-reference/src/utils/storage.ts:1777:    let cleanId = String(referrerMemberId || '').trim().replace(/^#+/, '').toUpperCase();
+source-reference/src/utils/storage.ts:1847:export async function checkAndAutoClaimReferral(currentMemberId: string): Promise<{ claimed: boolean; message?: string; rewardCoins?: number }> {
+source-reference/src/utils/storage.ts:1870:          if (traceData && traceData.hasTrace && traceData.referrerMemberId) {
+source-reference/src/utils/storage.ts:1871:            pendingRef = String(traceData.referrerMemberId).trim().replace(/^#+/, '');
+source-reference/src/utils/storage.ts:1879:    if (!pendingRef || pendingRef === currentMemberId) {
+source-reference/src/utils/storage.ts:1884:    const claimRes = await claimReferralBonus(pendingRef, currentMemberId);
+source-reference/src/utils/storage.ts:1900:  userMemberId: string;
+source-reference/src/utils/storage.ts:1957:    const memberIdStr = String(payload.userMemberId).trim();
+source-reference/src/utils/storage.ts:1964:      userMemberId: memberIdStr,
+source-reference/src/utils/storage.ts:1965:      userName: payload.userName || `User #${memberIdStr}`,
+source-reference/src/utils/storage.ts:1990:      const userRef = doc(db, 'users', memberIdStr);
+source-reference/src/utils/storage.ts:1998:          id: `usr_${memberIdStr}`,
+source-reference/src/utils/storage.ts:1999:          memberId: memberIdStr,
+source-reference/src/utils/storage.ts:2000:          name: payload.userName || `User #${memberIdStr}`,
+source-reference/src/utils/storage.ts:2012:      if (wallet.memberId === memberIdStr) {
+source-reference/src/utils/storage.ts:2115:    if (action === 'APPROVE' && payReq.userMemberId) {
+source-reference/src/utils/storage.ts:2116:      const targetMemberId = String(payReq.userMemberId).trim();
+source-reference/src/utils/storage.ts:2118:      const userRef = doc(db, 'users', targetMemberId);
+source-reference/src/utils/storage.ts:2128:          id: `usr_${targetMemberId}`,
+source-reference/src/utils/storage.ts:2129:          memberId: targetMemberId,
+source-reference/src/utils/storage.ts:2130:          name: payReq.userName || `User #${targetMemberId}`,
+source-reference/src/utils/storage.ts:2143:      if (currentWallet.memberId === targetMemberId) {
+source-reference/src/utils/storage.ts:2150:      const userExists = usersList.some((u) => u.memberId === targetMemberId);
+source-reference/src/utils/storage.ts:2154:          if (u.memberId === targetMemberId) {
+source-reference/src/utils/storage.ts:2163:            id: `usr_${targetMemberId}`,
+source-reference/src/utils/storage.ts:2164:            memberId: targetMemberId,
+source-reference/src/utils/storage.ts:2165:            name: payReq.userName || `User #${targetMemberId}`,
+source-reference/src/utils/storage.ts:2204:  userMemberId: string;
+source-reference/src/utils/storage.ts:2208:  const { userMemberId, username, password } = params;
+source-reference/src/utils/storage.ts:2210:  const cleanMemId = String(userMemberId).trim();
+source-reference/src/utils/storage.ts:2221:    userMemberId: cleanMemId,
+source-reference/src/utils/storage.ts:2280:  userMemberId: string;
+source-reference/src/utils/storage.ts:2284:  const { sessionId, userMemberId, otpCode, username } = params;
+source-reference/src/utils/storage.ts:2286:  const cleanMemId = String(userMemberId).trim();
+source-reference/src/utils/storage.ts:2304:        userMemberId: cleanMemId,
+source-reference/src/utils/storage.ts:2346:          memberId: cleanMemId,
+source-reference/src/utils/storage.ts:2363:  if (currentWallet.memberId === cleanMemId) {
+source-reference/src/utils/storage.ts:2371:    if (u.memberId === cleanMemId) {
+source-reference/src/utils/authService.ts:82:  referrerMemberId?: string;
+source-reference/src/utils/authService.ts:96:  newMemberId: string,
+source-reference/src/utils/authService.ts:113:  if (!cleanReferrerId || cleanReferrerId === newMemberId) {
+source-reference/src/utils/authService.ts:121:    // 1. Direct check in users/{memberId}
+source-reference/src/utils/authService.ts:128:      // 2. Query in users by memberId or referralCode
+source-reference/src/utils/authService.ts:129:      const q = query(collection(db, 'users'), where('memberId', '==', cleanReferrerId));
+source-reference/src/utils/authService.ts:140:          cleanReferrerId = referrerDocSnap.data().memberId || cleanReferrerId;
+source-reference/src/utils/authService.ts:165:      const refRecordId = `ref_${cleanReferrerId}_${newMemberId}`;
+source-reference/src/utils/authService.ts:169:        referredUserId: `#${newMemberId}`,
+source-reference/src/utils/authService.ts:171:        referredUid: newMemberId,
+source-reference/src/utils/authService.ts:185:            referrerMemberId: cleanReferrerId,
+source-reference/src/utils/authService.ts:186:            newMemberId: newMemberId,
+source-reference/src/utils/authService.ts:195:        referrerMemberId: cleanReferrerId,
+source-reference/src/utils/authService.ts:234:  let existingMemberId: string | null = null;
+source-reference/src/utils/authService.ts:241:      existingMemberId = authUserSnap.data().memberId || null;
+source-reference/src/utils/authService.ts:248:  if (!existingMemberId && email) {
+source-reference/src/utils/authService.ts:253:        existingMemberId = emailAccSnap.data().memberId || null;
+source-reference/src/utils/authService.ts:259:  if (!existingMemberId) {
+source-reference/src/utils/authService.ts:266:          existingMemberId = docSnap.data().memberId || docSnap.id;
+source-reference/src/utils/authService.ts:275:  if (existingMemberId && !existingUserData) {
+source-reference/src/utils/authService.ts:277:      const userDocSnap = await fastTimeout(getDoc(doc(db, 'users', existingMemberId)), 2000, null);
+source-reference/src/utils/authService.ts:289:  if (existingMemberId && existingUserData) {
+source-reference/src/utils/authService.ts:302:      memberId: existingMemberId,
+source-reference/src/utils/authService.ts:303:      referralCode: existingUserData.referralCode || `ROX${existingMemberId}`,
+source-reference/src/utils/authService.ts:328:        const qOrders = query(collection(db, 'orders'), where('userMemberId', '==', existingMemberId), limit(50));
+source-reference/src/utils/authService.ts:342:    console.log(`✅ Returning User: ${email} (Member #${existingMemberId}) restored with ${finalReturningCoins} Coins!`);
+source-reference/src/utils/authService.ts:346:    const newMemberId = Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:347:    const userReferralCode = `ROX${newMemberId}`;
+source-reference/src/utils/authService.ts:354:      refResult = await processNewUserReferral(effectiveRefCode, newMemberId, fp, adminCfg);
+source-reference/src/utils/authService.ts:361:      memberId: newMemberId,
+source-reference/src/utils/authService.ts:378:      referredBy: refResult.applied ? `#${refResult.referrerMemberId}` : undefined,
+source-reference/src/utils/authService.ts:384:    console.log(`🎉 New User Registered: ${email} (Member #${newMemberId}) with ${initialCoins} Coins!`);
+source-reference/src/utils/authService.ts:388:  localStorage.setItem('roxyefollow_user_member_id', finalWallet.memberId);
+source-reference/src/utils/authService.ts:398:  const userDocRef = doc(db, 'users', finalWallet.memberId);
+source-reference/src/utils/authService.ts:400:    id: `usr_${finalWallet.memberId}`,
+source-reference/src/utils/authService.ts:401:    userId: `#${finalWallet.memberId}`,
+source-reference/src/utils/authService.ts:402:    memberId: finalWallet.memberId,
+source-reference/src/utils/authService.ts:403:    referralCode: finalWallet.referralCode || `ROX${finalWallet.memberId}`,
+source-reference/src/utils/authService.ts:404:    name: displayName || `User #${finalWallet.memberId}`,
+source-reference/src/utils/authService.ts:432:  // Save authUid -> memberId fast mapping
+source-reference/src/utils/authService.ts:434:    memberId: finalWallet.memberId,
+source-reference/src/utils/authService.ts:464:          : `👋 Welcome back ${displayName}! Your account #${finalWallet.memberId} is fully restored.`)
+source-reference/src/utils/authService.ts:494:    const newMemberId = Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:503:      refResult = await processNewUserReferral(effectiveRefCode, newMemberId, fp, adminCfg);
+source-reference/src/utils/authService.ts:513:      memberId: newMemberId,
+source-reference/src/utils/authService.ts:514:      referralCode: `ROX${newMemberId}`,
+source-reference/src/utils/authService.ts:518:      displayName: displayName || `User #${newMemberId}`,
+source-reference/src/utils/authService.ts:529:      referredBy: refResult.applied ? `#${refResult.referrerMemberId}` : undefined,
+source-reference/src/utils/authService.ts:539:      displayName: displayName || `User #${newMemberId}`,
+source-reference/src/utils/authService.ts:540:      memberId: newMemberId,
+source-reference/src/utils/authService.ts:541:      referralCode: `ROX${newMemberId}`,
+source-reference/src/utils/authService.ts:550:    localStorage.setItem('roxyefollow_user_member_id', newMemberId);
+source-reference/src/utils/authService.ts:557:    const userDocRef = doc(db, 'users', newMemberId);
+source-reference/src/utils/authService.ts:559:      id: `usr_${newMemberId}`,
+source-reference/src/utils/authService.ts:560:      userId: `#${newMemberId}`,
+source-reference/src/utils/authService.ts:561:      memberId: newMemberId,
+source-reference/src/utils/authService.ts:562:      referralCode: `ROX${newMemberId}`,
+source-reference/src/utils/authService.ts:563:      name: displayName || `User #${newMemberId}`,
+source-reference/src/utils/authService.ts:565:      displayName: displayName || `User #${newMemberId}`,
+source-reference/src/utils/authService.ts:575:      referredBy: refResult.applied ? `#${refResult.referrerMemberId}` : null,
+source-reference/src/utils/authService.ts:592:      memberId: newMemberId,
+source-reference/src/utils/authService.ts:594:      displayName: displayName || `User #${newMemberId}`,
+source-reference/src/utils/authService.ts:661:    const memberId = accountData.memberId || Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:662:    const userDocRef = doc(db, 'users', memberId);
+source-reference/src/utils/authService.ts:682:      memberId: memberId,
+source-reference/src/utils/authService.ts:683:      referralCode: accountData.referralCode || existingUserData?.referralCode || `ROX${memberId}`,
+source-reference/src/utils/authService.ts:687:      displayName: accountData.displayName || existingUserData?.displayName || `User #${memberId}`,
+source-reference/src/utils/authService.ts:704:    localStorage.setItem('roxyefollow_user_member_id', memberId);
+source-reference/src/utils/authService.ts:712:      memberId,
+source-reference/src/utils/authService.ts:736:      message: `👋 Welcome back ${restoredWallet.displayName}! Account #${memberId} verified.`
+source-reference/src/utils/authService.ts:1019:        const memberId = existingData.memberId || Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:1025:          memberId,
+source-reference/src/utils/authService.ts:1075:    const memberId = existingData.memberId || Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:1081:      memberId,
+source-reference/src/utils/authService.ts:1122:      const memberId = existingData.memberId || Math.floor(100000 + Math.random() * 900000).toString();
+source-reference/src/utils/authService.ts:1128:        memberId,
+source-reference/src/utils/authService.ts:1383:  const hasMemberId = Boolean(wallet.memberId && wallet.memberId !== '100001');
+source-reference/src/utils/authService.ts:1386:  return Boolean(hasAuthUid || (hasEmail && hasMemberId) || wallet.isGoogleLinked);
+source-reference/src/utils/authService.ts:1399:  const memberId = currentLocalWallet.memberId || `ROX${Math.floor(100000 + Math.random() * 900000)}`;
+source-reference/src/utils/authService.ts:1403:    memberId,
+source-reference/src/utils/authService.ts:1438:    localStorage.removeItem('roxyefollow_user_member_id');
+source-reference/src/utils/authService.ts:1444:      memberId: '100001',
+source-reference/src/utils/authService.ts:1475:export async function restoreUserByMemberId(memberId: string): Promise<GoogleAuthResult> {
+source-reference/src/utils/authService.ts:1476:  if (!memberId) {
+source-reference/src/utils/authService.ts:1480:    const userDocRef = doc(db, 'users', memberId);
+source-reference/src/utils/authService.ts:1483:      return { success: false, error: `Account #${memberId} not found.` };
+source-reference/src/utils/authService.ts:1490:      memberId,
+source-reference/src/utils/authService.ts:1509:    localStorage.setItem('roxyefollow_user_member_id', memberId);
+source-reference/src/utils/authService.ts:1520:      message: `🎉 Account restored! Welcome back ${finalWallet.displayName || finalWallet.email || '#' + memberId}.`
+source-reference/src/utils/authService.ts:1523:    console.error('restoreUserByMemberId error:', err);
+source-reference/src/utils/authService.ts:1547:export function getAppReturnIntentUrl(memberId?: string, email?: string): string {
+source-reference/src/utils/authService.ts:1549:  const search = `?memberId=${memberId || ''}&email=${encodeURIComponent(email || '')}&auth_return=1`;
+source-reference/src/screens/HomeScreen.tsx:260:    const memberId = String(wallet.memberId || '100001').trim();
+source-reference/src/screens/HomeScreen.tsx:263:      userMemberId: memberId,
+source-reference/src/screens/CoinsScreen.tsx:82:  const displayUserId = `#${wallet.memberId}`;
+source-reference/src/screens/CoinsScreen.tsx:85:  const referralShareUrl = `${cleanBaseUrl}?ref=${wallet.memberId}`;
+source-reference/src/screens/CoinsScreen.tsx:97:    if (isShareModalOpen && wallet?.memberId) {
+source-reference/src/screens/CoinsScreen.tsx:99:      fetchUserReferralHistory(wallet.memberId).then(data => {
+source-reference/src/screens/CoinsScreen.tsx:105:  }, [isShareModalOpen, wallet?.memberId]);
+source-reference/src/screens/CoinsScreen.tsx:120:    if (cleanCode === wallet.memberId || cleanCode.toUpperCase() === `RX${wallet.memberId}`) {
+source-reference/src/screens/CoinsScreen.tsx:129:      const res = await claimReferralBonus(cleanCode, wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:146:  const userReferralCode = wallet.referralCode || `ROX${wallet.memberId}`;
+source-reference/src/screens/CoinsScreen.tsx:149:    traceReferralClick(wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:164:    traceReferralClick(wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:176:    traceReferralClick(wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:194:    traceReferralClick(wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:204:    traceReferralClick(wallet.memberId);
+source-reference/src/screens/CoinsScreen.tsx:238:            Member #{wallet.memberId}
+source-reference/src/screens/CoinsScreen.tsx:673:                <strong className="text-amber-300 font-bold">Automatic & Manual Support:</strong> Jab aapka dost aapke link se open karega ya unki app me aapka Member ID code <strong className="text-amber-300 font-mono">#{wallet.memberId}</strong> apply karega, tab aapko <strong className="text-amber-400 font-black">+{referrerBonusCoins} Coins</strong> aur dost ko <strong className="text-pink-400 font-black">+{newMemberBonusCoins} Coins</strong> milenge!
+source-reference/src/screens/BlockedScreen.tsx:6:  memberId: string;
+source-reference/src/screens/BlockedScreen.tsx:13:  memberId,
+source-reference/src/screens/BlockedScreen.tsx:50:      const res = await checkUserBlockedStatus(memberId);
+source-reference/src/screens/BlockedScreen.tsx:116:            <span className="font-mono text-amber-400 font-bold">#{memberId}</span>
+source-reference/src/screens/SettingsScreen.tsx:47:    navigator.clipboard.writeText(wallet.memberId);
+source-reference/src/screens/SettingsScreen.tsx:48:    onShowToast(`Member ID #${wallet.memberId} copied!`);
+source-reference/src/screens/SettingsScreen.tsx:110:            <h3 className="text-xs sm:text-sm font-mono font-extrabold text-pink-300">#{wallet.memberId}</h3>
+source-reference/src/screens/OrdersScreen.tsx:35:  const currentMemberId = wallet?.memberId || '100001';
+source-reference/src/screens/OrdersScreen.tsx:41:    const userReqs = data.filter((r) => r.userMemberId === currentMemberId);
+source-reference/src/screens/OrdersScreen.tsx:49:      const userReqs = allReqs.filter((r) => r.userMemberId === currentMemberId);
+source-reference/src/screens/OrdersScreen.tsx:53:  }, [currentMemberId]);
+source-reference/src/screens/OrdersScreen.tsx:68:      ord.userMemberId === currentMemberId ||

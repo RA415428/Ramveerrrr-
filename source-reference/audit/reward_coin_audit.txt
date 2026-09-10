@@ -1,0 +1,221 @@
+source-reference/src/types/index.ts:8:  coins: number;
+source-reference/src/types/index.ts:38:  coins: number;
+source-reference/src/types/index.ts:70:export type ReferralStatus = 'CLICKED' | 'PENDING' | 'QUALIFIED' | 'REWARDED' | 'REJECTED' | 'REVIEW';
+source-reference/src/types/index.ts:84:  rewardedAt?: number;
+source-reference/src/types/index.ts:151:  coins: number;
+source-reference/src/types/index.ts:197:  rewardedAdId: string;
+source-reference/src/types/index.ts:199:  unityRewardedPlacementId?: string;
+source-reference/src/types/index.ts:205:  coinsPerRewardAd: number;
+source-reference/src/types/index.ts:251:  referralRewardCoins: number;
+source-reference/src/types/index.ts:270:  coins: number;
+source-reference/src/types/index.ts:335:  rewardCoins: number;
+source-reference/src/components/SideSlidingAd.tsx:12:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;
+source-reference/src/components/SideSlidingAd.tsx:28:  const rewardCoins = adminConfig?.ads?.coinsPerSocialBarAd ?? adminConfig?.ads?.coinsPerRewardAd ?? 10;
+source-reference/src/components/AdModal.tsx:8:  onRewardClaim?: (coins: number) => void;
+source-reference/src/components/AdModal.tsx:69:      win.onNativeRewardedAdCompleted = handleNativeCompleted;
+source-reference/src/components/AdModal.tsx:171:        {/* Rewarded Video Screen Player Simulation */}
+source-reference/src/components/AdModal.tsx:217:              : `Playing Rewarded Ad (${timeLeft}s)`}
+source-reference/src/components/Admin/AdminAdsConfig.tsx:30:    coinsPerRewardAd: config.ads.coinsPerRewardAd?.toString() || '50',
+source-reference/src/components/Admin/AdminAdsConfig.tsx:48:        coinsPerRewardAd: config.ads.coinsPerRewardAd?.toString() || '50',
+source-reference/src/components/Admin/AdminAdsConfig.tsx:63:      coinsPerRewardAd: parseInt(inputStrings.coinsPerRewardAd, 10) || 50,
+source-reference/src/components/Admin/AdminAdsConfig.tsx:135:            Rewarded: +{inputStrings.coinsPerRewardAd} Coins
+source-reference/src/components/Admin/AdminAdsConfig.tsx:141:            <label className="block text-xs font-bold text-emerald-400">Coins Reward per Rewarded Video Ad</label>
+source-reference/src/components/Admin/AdminAdsConfig.tsx:146:                value={inputStrings.coinsPerRewardAd}
+source-reference/src/components/Admin/AdminAdsConfig.tsx:147:                onChange={(e) => setInputStrings({ ...inputStrings, coinsPerRewardAd: e.target.value })}
+source-reference/src/components/Admin/AdminAdsConfig.tsx:185:            <p className="text-[10px] text-slate-500">Coins rewarded when user clicks & claims Social Bar offer.</p>
+source-reference/src/components/Admin/AdminAdsConfig.tsx:256:            <p className="text-[10px] text-slate-500">Daily limit for rewarded video ads per user.</p>
+source-reference/src/components/Admin/AdminAnnouncements.tsx:46:      bonusCoins: parsedBonus
+source-reference/src/components/Admin/AdminAnnouncements.tsx:224:                    setAnnouncementState(prev => ({ ...prev, bonusCoins: parsed }));
+source-reference/src/components/Admin/AdminOrders.tsx:28:  onRefundUser: (coins: number) => void;
+source-reference/src/components/Admin/AdminUsers.tsx:165:      coins: calculatedCoins,
+source-reference/src/components/Admin/AdminUsers.tsx:177:        return { ...u, coins: calculatedCoins, coinsUpdatedByAdmin: true, updatedAt: Date.now() };
+source-reference/src/components/Admin/AdminUsers.tsx:185:  const handleSetExactCoins = async (userId: string, exactCoins: number) => {
+source-reference/src/components/Admin/AdminUsers.tsx:193:      coins: validCoins,
+source-reference/src/components/Admin/AdminUsers.tsx:205:        return { ...u, coins: validCoins, coinsUpdatedByAdmin: true, updatedAt: Date.now() };
+source-reference/src/components/Admin/AdminUsers.tsx:536:                  <span className="text-[10px] text-slate-400 font-semibold">Set Exact Coins:</span>
+source-reference/src/components/Admin/AdminPricing.tsx:74:    referralRewardCoins: config.pricing.referralRewardCoins?.toString() ?? '10',
+source-reference/src/components/Admin/AdminPricing.tsx:75:    googleWelcomeBonusCoins: config.pricing.googleWelcomeBonusCoins?.toString() ?? '10',
+source-reference/src/components/Admin/AdminPricing.tsx:121:        referralRewardCoins: config.pricing.referralRewardCoins?.toString() ?? '50',
+source-reference/src/components/Admin/AdminPricing.tsx:122:        googleWelcomeBonusCoins: config.pricing.googleWelcomeBonusCoins?.toString() ?? '50',
+source-reference/src/components/Admin/AdminPricing.tsx:180:      referralRewardCoins: parseVal(inputStrings.referralRewardCoins, 10),
+source-reference/src/components/Admin/AdminPricing.tsx:181:      googleWelcomeBonusCoins: Math.max(0, Math.floor(parseVal(inputStrings.googleWelcomeBonusCoins, 10))),
+source-reference/src/components/Admin/AdminPricing.tsx:231:      referralRewardCoins: finalPricing.referralRewardCoins.toString(),
+source-reference/src/components/Admin/AdminPricing.tsx:232:      googleWelcomeBonusCoins: (finalPricing.googleWelcomeBonusCoins ?? 10).toString(),
+source-reference/src/components/Admin/AdminPricing.tsx:258:      coins: 250,
+source-reference/src/components/Admin/AdminPricing.tsx:670:                    onChange={(e) => setInputStrings({ ...inputStrings, googleWelcomeBonusCoins: e.target.value })}
+source-reference/src/components/Admin/AdminPricing.tsx:713:                  onChange={(e) => setInputStrings({ ...inputStrings, referralRewardCoins: e.target.value })}
+source-reference/src/components/Admin/AdminPricing.tsx:774:                  setSubscriptionState({ ...subscriptionState, coins: val });
+source-reference/src/components/Admin/AdminPricing.tsx:862:                    onChange={(e) => updatePackage(pkg.id, { coins: parseInt(e.target.value) || 0 })}
+source-reference/src/components/Admin/AdminReferrals.tsx:40:    rewardedCount: 0,
+source-reference/src/components/Admin/AdminReferrals.tsx:53:  const [statusFilter, setStatusFilter] = useState<'ALL' | 'REWARDED' | 'REVIEW' | 'REJECTED'>('ALL');
+source-reference/src/components/Admin/AdminReferrals.tsx:121:        onShowToast?.(`Referral ${reviewAction === 'APPROVE' ? 'Approved & Rewarded' : 'Rejected'}`);
+source-reference/src/components/Admin/AdminReferrals.tsx:218:          <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">Rewarded / Verified</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:220:            <span className="text-2xl font-black text-emerald-400 font-mono">{stats.rewardedCount}</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:232:          <span className="text-[10px] text-amber-300/70 mt-1 block">Total Coins Rewarded</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:411:              <option value="REWARDED">Rewarded (Verified)</option>
+source-reference/src/components/Admin/AdminReferrals.tsx:454:                      {item.status === 'REWARDED' ? (
+source-reference/src/components/Admin/AdminReferrals.tsx:456:                          Rewarded
+source-reference/src/components/PaymentModal.tsx:11:  onPaymentSuccess: (coins: number) => void;
+source-reference/src/components/PaymentModal.tsx:159:      coins: pkg.coins,
+source-reference/src/components/ReferralModal.tsx:175:            coins: (wallet.coins || 0) + (res.rewardCoins || 50),
+source-reference/src/components/TopBar.tsx:9:  onOpenCoins: () => void;
+source-reference/src/components/NativeAd.tsx:18:  onRewardClaim?: (coins: number) => void;
+source-reference/src/components/NativeAd.tsx:204:          detail: { coins: rewardCoins, adId: effectiveAdId },
+source-reference/src/components/PrivacyTermsModal.tsx:48:                <strong>3. Advertising & Rewards:</strong> Watching rewarded video ads earns in-app virtual coins. Ad identifiers are handled by standard ad provider SDKs compliant with privacy policies.
+source-reference/src/components/PrivacyTermsModal.tsx:60:                <strong>2. Virtual Coins:</strong> Coins are in-app reward credits earned via video ads or purchased through top-up options. Coins cannot be converted into cash or transferred between accounts.
+source-reference/src/components/SupportModal.tsx:25:      a: 'Go to the "Store" tab and click "Watch Video Ad (+10 Coins)". You can watch up to 12 rewarded video ads daily for free coins!'
+source-reference/src/components/AdBanner.tsx:20:  onRewardClaim?: (coins: number) => void;
+source-reference/src/components/AdBanner.tsx:233:          detail: { coins: rewardCoins, adId: effectiveAdId },
+source-reference/src/components/TopSlidingAd.tsx:10:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;
+source-reference/src/components/AnnouncementModal.tsx:9:  onClaimBonus?: (bonusCoins: number) => void;
+source-reference/src/App.tsx:38:import { showNativeRewardedAd } from './utils/nativeAdsBridge';
+source-reference/src/App.tsx:49:import { openExternalAdLink, openAdsterraPopunder, showRewardedAd } from './utils/openAdLink';
+source-reference/src/App.tsx:389:    COINS: 0,
+source-reference/src/App.tsx:416:        const updated = { ...prev, coins: prev.coins + bonusCoins, referralClaimed: true };
+source-reference/src/App.tsx:447:  const handleClaimAnnouncementBonus = (bonusCoins: number) => {
+source-reference/src/App.tsx:462:        coins: wallet.coins + bonusCoins
+source-reference/src/App.tsx:556:        handleShowToast('🎁 Bonus Ad Ready! Tap Watch Ad in Coins tab (+10 Coins)');
+source-reference/src/App.tsx:612:        coins: walletWithMutation.coins,
+source-reference/src/App.tsx:625:            coins: walletWithMutation.coins,
+source-reference/src/App.tsx:638:          coins: walletWithMutation.coins,
+source-reference/src/App.tsx:677:          coins: activeUserInList.coins,
+source-reference/src/App.tsx:756:  const handleRewardEarned = (earnedCoins: number, isVideoAd: boolean = true) => {
+source-reference/src/App.tsx:766:      coins: Math.round((baseCoins + earnedCoins) * 100) / 100,
+source-reference/src/App.tsx:777:      title: isVideoAd ? 'Rewarded Ad View' : 'Picture Ad Reward',
+source-reference/src/App.tsx:785:  const handleOpenAdModal = () => {
+source-reference/src/App.tsx:806:    const coinsToEarn = adminConfig.ads?.coinsPerRewardAd || 50;
+source-reference/src/App.tsx:810:  // Store screen "Watch Ad" button -> real Unity Rewarded Video ad (Android app only).
+source-reference/src/App.tsx:812:  // rewarded ad was watched fully. Falls back to the existing instant-credit
+source-reference/src/App.tsx:814:  const handleWatchRewardedAdStore = () => {
+source-reference/src/App.tsx:831:    const coinsToEarn = adminConfig.ads?.coinsPerRewardAd || 50;
+source-reference/src/App.tsx:833:    showNativeRewardedAd({
+source-reference/src/App.tsx:882:      coins: wallet.coins + coinsBought
+source-reference/src/App.tsx:907:      coins: Math.max(0, Math.round((wallet.coins - newOrder.coinsSpent) * 100) / 100),
+source-reference/src/App.tsx:972:            coins: updatedWallet.coins,
+source-reference/src/App.tsx:987:          coins: updatedWallet.coins,
+source-reference/src/App.tsx:1009:      coins: wallet.coins + coinsToRefund
+source-reference/src/App.tsx:1253:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1265:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1275:              onOpenAdModal={handleWatchRewardedAdStore}
+source-reference/src/App.tsx:1290:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1361:          rewardCoins={adminConfig.ads.coinsPerRewardAd}
+source-reference/src/App.tsx:1363:          adUnitId={adminConfig.ads.rewardedAdId}
+source-reference/src/data/appData.ts:182:  { id: 'pkg_100', coins: 100, priceINR: '₹30.00', priceNum: 30.00 },
+source-reference/src/data/appData.ts:183:  { id: 'pkg_500', coins: 500, priceINR: '₹130.00', priceNum: 130.00, badge: 'Popular' },
+source-reference/src/data/appData.ts:184:  { id: 'pkg_1000', coins: 1000, priceINR: '₹290.00', priceNum: 290.00 },
+source-reference/src/data/appData.ts:185:  { id: 'pkg_2000', coins: 2000, priceINR: '₹590.00', priceNum: 590.00, badge: 'Best Value' },
+source-reference/src/data/appData.ts:186:  { id: 'pkg_5000', coins: 5000, priceINR: '₹1,500.00', priceNum: 1500.00 },
+source-reference/src/data/appData.ts:187:  { id: 'pkg_10000', coins: 10000, priceINR: '₹3,000.00', priceNum: 3000.00 }
+source-reference/src/data/appData.ts:192:  coins: 100,
+source-reference/src/utils/adPreloadManager.ts:15:  coinsPerRewardAd: number;
+source-reference/src/utils/adPreloadManager.ts:18:  rewardedAdCooldownSeconds: number;
+source-reference/src/utils/adPreloadManager.ts:121:    coinsPerRewardAd: 50,
+source-reference/src/utils/adPreloadManager.ts:124:    rewardedAdCooldownSeconds: 30,
+source-reference/src/utils/adPreloadManager.ts:138:        // Guarantee coinsPerRewardAd is a positive number, never defaulting back if user set custom
+source-reference/src/utils/adPreloadManager.ts:139:        coinsPerRewardAd: typeof parsed.coinsPerRewardAd === 'number' && parsed.coinsPerRewardAd > 0
+source-reference/src/utils/adPreloadManager.ts:140:          ? parsed.coinsPerRewardAd
+source-reference/src/utils/adPreloadManager.ts:141:          : defaultSnapshot.coinsPerRewardAd
+source-reference/src/utils/openAdLink.ts:68:export const showRewardedAd = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:71:export const triggerNativeRewardedAd = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:73:export const showAppCreator24Rewarded = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:79:  (window as any).triggerNativeRewardedAd = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:82:  (window as any).showRewarded = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:83:  (window as any).showRewardedAd = () => openAdsterraPopunder();
+source-reference/src/utils/branch.ts:90:  onBonusClaimed?: (msg: string, bonusCoins: number) => void
+source-reference/src/utils/format.ts:1:export function formatCoins(coins: number): string {
+source-reference/src/utils/storage.ts:87:      // Protect coinsPerRewardAd from dropping to 0 or null on slow network sync
+source-reference/src/utils/storage.ts:88:      coinsPerRewardAd: (typeof updated.ads.coinsPerRewardAd === 'number' && updated.ads.coinsPerRewardAd > 0)
+source-reference/src/utils/storage.ts:89:        ? updated.ads.coinsPerRewardAd
+source-reference/src/utils/storage.ts:90:        : persistedRates.coinsPerRewardAd || 50,
+source-reference/src/utils/storage.ts:101:      coinsPerRewardAd: persistedRates.coinsPerRewardAd || 50,
+source-reference/src/utils/storage.ts:126:          coinsPerRewardAd: (parsed.ads && typeof parsed.ads.coinsPerRewardAd === 'number' && parsed.ads.coinsPerRewardAd > 0)
+source-reference/src/utils/storage.ts:127:            ? parsed.ads.coinsPerRewardAd
+source-reference/src/utils/storage.ts:128:            : persistedRates.coinsPerRewardAd || 50
+source-reference/src/utils/storage.ts:153:        coinsPerRewardAd: config.ads.coinsPerRewardAd,
+source-reference/src/utils/storage.ts:156:        rewardedAdCooldownSeconds: config.ads.rewardAdDurationSeconds,
+source-reference/src/utils/storage.ts:325:            coinsPerRewardAd: merged.ads.coinsPerRewardAd,
+source-reference/src/utils/storage.ts:328:            rewardedAdCooldownSeconds: merged.ads.rewardAdDurationSeconds,
+source-reference/src/utils/storage.ts:760:      coins: uData.coins !== undefined ? Number(uData.coins) : 0,
+source-reference/src/utils/storage.ts:958:            coins: wallet.coins,
+source-reference/src/utils/storage.ts:995:        coins: typeof wallet.coins === 'number' ? wallet.coins : 0,
+source-reference/src/utils/storage.ts:1030:          coins: wallet.coins,
+source-reference/src/utils/storage.ts:1093:            coinsPerRewardAd: data.ads.coinsPerRewardAd,
+source-reference/src/utils/storage.ts:1096:            rewardedAdCooldownSeconds: data.ads.rewardAdDurationSeconds,
+source-reference/src/utils/storage.ts:1428:    coins: 0,
+source-reference/src/utils/storage.ts:1468:    coins: currentWallet.coins,
+source-reference/src/utils/storage.ts:1514:                coins: typeof u.coins === 'number' ? u.coins : currentWallet.coins,
+source-reference/src/utils/storage.ts:1684:          rewardCoins: data.rewardCoins || 50,
+source-reference/src/utils/storage.ts:1685:          referrerRewardCoins: data.referrerRewardCoins || 100
+source-reference/src/utils/storage.ts:1713:        rewardCoins: bonusToAdd,
+source-reference/src/utils/storage.ts:1714:        referrerRewardCoins: refBonus
+source-reference/src/utils/storage.ts:1890:        rewardCoins: claimRes.rewardCoins || 50
+source-reference/src/utils/storage.ts:1903:  coins: number;
+source-reference/src/utils/storage.ts:1967:      coins: coinsNum,
+source-reference/src/utils/storage.ts:1995:        await setDoc(userRef, { coins: newCoins, updatedAt: Date.now() }, { merge: true }).catch(() => {});
+source-reference/src/utils/storage.ts:2001:          coins: newCoins,
+source-reference/src/utils/storage.ts:2125:        await setDoc(userRef, { coins: newCoins, updatedAt: Date.now() }, { merge: true }).catch(() => {});
+source-reference/src/utils/storage.ts:2131:          coins: newCoins,
+source-reference/src/utils/storage.ts:2155:            return { ...u, coins: newCoins };
+source-reference/src/utils/storage.ts:2166:            coins: newCoins,
+source-reference/src/utils/storage.ts:2225:    rewardCoins: 200,
+source-reference/src/utils/storage.ts:2340:      await setDoc(userRef, { coins: newCoins, updatedAt: Date.now() }, { merge: true });
+source-reference/src/utils/storage.ts:2348:          coins: newCoins,
+source-reference/src/utils/storage.ts:2372:      return { ...u, coins: currentWallet.coins };
+source-reference/src/utils/storage.ts:2385:    totalCoins: currentWallet.coins,
+source-reference/src/utils/authService.ts:83:  bonusCoins: number;
+source-reference/src/utils/authService.ts:101:    return { applied: false, bonusCoins: 0, message: '' };
+source-reference/src/utils/authService.ts:114:    return { applied: false, bonusCoins: 0, message: '' };
+source-reference/src/utils/authService.ts:156:        coins: curCoins + rewardReferrer,
+source-reference/src/utils/authService.ts:175:        status: 'REWARDED',
+source-reference/src/utils/authService.ts:196:        bonusCoins: rewardReferred,
+source-reference/src/utils/authService.ts:204:  return { applied: false, bonusCoins: 0, message: '' };
+source-reference/src/utils/authService.ts:287:  let refResult: ReferralProcessResult = { applied: false, bonusCoins: 0, message: '' };
+source-reference/src/utils/authService.ts:304:      coins: finalReturningCoins,
+source-reference/src/utils/authService.ts:363:      coins: initialCoins,
+source-reference/src/utils/authService.ts:414:    coins: finalWallet.coins,
+source-reference/src/utils/authService.ts:498:    let refResult: ReferralProcessResult = { applied: false, bonusCoins: 0, message: '' };
+source-reference/src/utils/authService.ts:515:      coins: initialCoins,
+source-reference/src/utils/authService.ts:572:      coins: initialCoins,
+source-reference/src/utils/authService.ts:684:      coins: finalCoins,
+source-reference/src/utils/authService.ts:716:      coins: finalCoins,
+source-reference/src/utils/authService.ts:1404:    coins: currentLocalWallet.coins > 0 ? currentLocalWallet.coins : configuredWelcomeBonus,
+source-reference/src/utils/authService.ts:1445:      coins: 0,
+source-reference/src/utils/authService.ts:1491:      coins: typeof userData.coins === 'number' ? userData.coins : (currentLocalWallet.coins || 50),
+source-reference/src/utils/defaultAdminConfig.ts:14:    bonusCoins: 10
+source-reference/src/utils/defaultAdminConfig.ts:38:    rewardedAdId: 'ca-app-pub-7534769036423854/5224354917',
+source-reference/src/utils/defaultAdminConfig.ts:40:    unityRewardedPlacementId: 'Rewarded_Android',
+source-reference/src/utils/defaultAdminConfig.ts:46:    coinsPerRewardAd: 50,
+source-reference/src/utils/defaultAdminConfig.ts:80:    referralRewardCoins: 10,
+source-reference/src/utils/defaultAdminConfig.ts:81:    googleWelcomeBonusCoins: 10,
+source-reference/src/utils/nativeAdsBridge.ts:2:// Bridges the existing "Watch Ad" button (Store screen) to the native Android
+source-reference/src/utils/nativeAdsBridge.ts:3:// Unity LevelPlay (Unity Ads) Rewarded Video SDK via a Capacitor plugin.
+source-reference/src/utils/nativeAdsBridge.ts:6:// code. When running inside the Android app, calling showRewardedAd() will:
+source-reference/src/utils/nativeAdsBridge.ts:7://   1. Ask native Android to show a real Unity Rewarded Video ad.
+source-reference/src/utils/nativeAdsBridge.ts:18:        UnityRewardedAds?: {
+source-reference/src/utils/nativeAdsBridge.ts:19:          showRewardedAd: () => Promise<{ status: string; reason?: string }>;
+source-reference/src/utils/nativeAdsBridge.ts:35:      window.Capacitor.Plugins.UnityRewardedAds
+source-reference/src/utils/nativeAdsBridge.ts:42:interface ShowRewardedAdCallbacks {
+source-reference/src/utils/nativeAdsBridge.ts:49: * Shows the Unity rewarded video ad through the native Android bridge.
+source-reference/src/utils/nativeAdsBridge.ts:52:export const showNativeRewardedAd = async ({
+source-reference/src/utils/nativeAdsBridge.ts:56:}: ShowRewardedAdCallbacks): Promise<void> => {
+source-reference/src/utils/nativeAdsBridge.ts:63:    const plugin = window.Capacitor!.Plugins!.UnityRewardedAds!;
+source-reference/src/utils/nativeAdsBridge.ts:64:    const result = await plugin.showRewardedAd();
+source-reference/src/utils/nativeAdsBridge.ts:65:    if (result && result.status === 'REWARDED') {
+source-reference/src/utils/adSessionManager.ts:5:  rewardCoins: number;
+source-reference/src/utils/adSessionManager.ts:17:  rewardCoins: number = 50,
+source-reference/src/utils/adSessionManager.ts:46:  rewardCoins: number = 5,
+source-reference/src/utils/adSessionManager.ts:92:  | { status: 'COMPLETED'; coins: number; screen: string; session: AdSession }
+source-reference/src/utils/adSessionManager.ts:102:  onRewardClaimed?: (coins: number, screen?: string, type?: string) => void
+source-reference/src/utils/adSessionManager.ts:131:        coins: session.rewardCoins,
+source-reference/src/screens/HomeScreen.tsx:12:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;
+source-reference/src/screens/HomeScreen.tsx:14:  onOpenCoins: () => void;
+source-reference/src/screens/CoinsScreen.tsx:17:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;
+source-reference/src/screens/CoinsScreen.tsx:33:  const rewardCoins = adminConfig?.ads?.coinsPerRewardAd ?? 50;
+source-reference/src/screens/CoinsScreen.tsx:252:            id="watch-rewarded-ad-store-btn"
+source-reference/src/screens/CoinsScreen.tsx:274:                <span>Watch Ad <strong className="text-amber-400 font-mono">+{rewardCoins}</strong></span>
+source-reference/src/screens/CoinsScreen.tsx:583:                  +{wallet.totalReferralCoinsEarned || (referralHistory.filter(h => h.status === 'REWARDED').length * referrerBonusCoins)} Coins Earned
+source-reference/src/screens/CoinsScreen.tsx:606:                        {item.status === 'REWARDED' ? (
+source-reference/src/screens/AdminScreen.tsx:47:  onRefundUser: (coins: number) => void;
+source-reference/src/screens/OrdersScreen.tsx:16:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;
+source-reference/src/screens/OrdersScreen.tsx:275:                  <span>Coins: <strong className="text-amber-300 font-sans">{formatCoins(ord.coinsSpent)}</strong></span>
+source-reference/src/screens/HashtagsScreen.tsx:15:  onRewardClaim?: (coins: number, isVideoAd?: boolean) => void;

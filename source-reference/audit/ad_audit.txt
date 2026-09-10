@@ -1,0 +1,121 @@
+source-reference/src/types/index.ts:70:export type ReferralStatus = 'CLICKED' | 'PENDING' | 'QUALIFIED' | 'REWARDED' | 'REJECTED' | 'REVIEW';
+source-reference/src/types/index.ts:84:  rewardedAt?: number;
+source-reference/src/types/index.ts:193:  provider: 'AdMob' | 'UnityAds' | 'AppLovin' | 'CustomBanners' | 'Adsterra' | 'Monetag';
+source-reference/src/types/index.ts:197:  rewardedAdId: string;
+source-reference/src/types/index.ts:198:  unityGameId?: string;
+source-reference/src/types/index.ts:199:  unityRewardedPlacementId?: string;
+source-reference/src/components/SideSlidingAd.tsx:4:import { saveAdSession } from '../utils/adSessionManager';
+source-reference/src/components/SideSlidingAd.tsx:11:  onOpenAdModal?: () => void;
+source-reference/src/components/SideSlidingAd.tsx:20:  onOpenAdModal,
+source-reference/src/components/SideSlidingAd.tsx:50:    } else if (onOpenAdModal) {
+source-reference/src/components/SideSlidingAd.tsx:51:      onOpenAdModal();
+source-reference/src/components/AdModal.tsx:3:import { clearAdSession, getActiveAdSession, saveAdSession } from '../utils/adSessionManager';
+source-reference/src/components/AdModal.tsx:5:interface AdModalProps {
+source-reference/src/components/AdModal.tsx:16:export const AdModal: React.FC<AdModalProps> = ({
+source-reference/src/components/AdModal.tsx:21:  adProvider = 'Adsterra',
+source-reference/src/components/AdModal.tsx:68:      win.onAdsterraRewardEarned = handleNativeCompleted;
+source-reference/src/components/AdModal.tsx:69:      win.onNativeRewardedAdCompleted = handleNativeCompleted;
+source-reference/src/components/AdModal.tsx:150:            <span>{adProvider || 'Adsterra'} Sponsored Stream</span>
+source-reference/src/components/AdModal.tsx:171:        {/* Rewarded Video Screen Player Simulation */}
+source-reference/src/components/AdModal.tsx:177:              <span>{adProvider || 'Adsterra'} Official Ad Stream</span>
+source-reference/src/components/AdModal.tsx:191:            <p className="text-sm font-black text-white">{adProvider || 'Adsterra'} Sponsored Stream</p>
+source-reference/src/components/AdModal.tsx:217:              : `Playing Rewarded Ad (${timeLeft}s)`}
+source-reference/src/components/AdModal.tsx:279:            <span>Verified Secure Adsterra Stream • Instant Coins Delivery</span>
+source-reference/src/components/Admin/AdminAdsConfig.tsx:135:            Rewarded: +{inputStrings.coinsPerRewardAd} Coins
+source-reference/src/components/Admin/AdminAdsConfig.tsx:141:            <label className="block text-xs font-bold text-emerald-400">Coins Reward per Rewarded Video Ad</label>
+source-reference/src/components/Admin/AdminAdsConfig.tsx:185:            <p className="text-[10px] text-slate-500">Coins rewarded when user clicks & claims Social Bar offer.</p>
+source-reference/src/components/Admin/AdminAdsConfig.tsx:256:            <p className="text-[10px] text-slate-500">Daily limit for rewarded video ads per user.</p>
+source-reference/src/components/Admin/AdminReferrals.tsx:40:    rewardedCount: 0,
+source-reference/src/components/Admin/AdminReferrals.tsx:53:  const [statusFilter, setStatusFilter] = useState<'ALL' | 'REWARDED' | 'REVIEW' | 'REJECTED'>('ALL');
+source-reference/src/components/Admin/AdminReferrals.tsx:121:        onShowToast?.(`Referral ${reviewAction === 'APPROVE' ? 'Approved & Rewarded' : 'Rejected'}`);
+source-reference/src/components/Admin/AdminReferrals.tsx:218:          <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">Rewarded / Verified</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:220:            <span className="text-2xl font-black text-emerald-400 font-mono">{stats.rewardedCount}</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:232:          <span className="text-[10px] text-amber-300/70 mt-1 block">Total Coins Rewarded</span>
+source-reference/src/components/Admin/AdminReferrals.tsx:411:              <option value="REWARDED">Rewarded (Verified)</option>
+source-reference/src/components/Admin/AdminReferrals.tsx:454:                      {item.status === 'REWARDED' ? (
+source-reference/src/components/Admin/AdminReferrals.tsx:456:                          Rewarded
+source-reference/src/components/NativeAd.tsx:77:      iframe.title = 'Adsterra Real Native Ad';
+source-reference/src/components/NativeAd.tsx:248:        {/* Adsterra Native Iframe */}
+source-reference/src/components/PrivacyTermsModal.tsx:48:                <strong>3. Advertising & Rewards:</strong> Watching rewarded video ads earns in-app virtual coins. Ad identifiers are handled by standard ad provider SDKs compliant with privacy policies.
+source-reference/src/components/SupportModal.tsx:25:      a: 'Go to the "Store" tab and click "Watch Video Ad (+10 Coins)". You can watch up to 12 rewarded video ads daily for free coins!'
+source-reference/src/components/AdBanner.tsx:98:      iframe.title = 'Adsterra Real Banner Ad';
+source-reference/src/components/AdBanner.tsx:152:                    console.warn('[Adsterra Sandbox] Blocked automated popunder/redirect attempt.');
+source-reference/src/components/AdBanner.tsx:278:        {/* Adsterra Iframe Container */}
+source-reference/src/App.tsx:37:import { AdModal } from './components/AdModal';
+source-reference/src/App.tsx:38:import { showNativeRewardedAd } from './utils/nativeAdsBridge';
+source-reference/src/App.tsx:48:import { saveAdSession, getActiveAdSession, processAdSession } from './utils/adSessionManager';
+source-reference/src/App.tsx:49:import { openExternalAdLink, openAdsterraPopunder, showRewardedAd } from './utils/openAdLink';
+source-reference/src/App.tsx:384:  const [showAdModal, setShowAdModal] = useState<boolean>(false);
+source-reference/src/App.tsx:704:          setShowAdModal(true);
+source-reference/src/App.tsx:777:      title: isVideoAd ? 'Rewarded Ad View' : 'Picture Ad Reward',
+source-reference/src/App.tsx:785:  const handleOpenAdModal = () => {
+source-reference/src/App.tsx:810:  // Store screen "Watch Ad" button -> real Unity Rewarded Video ad (Android app only).
+source-reference/src/App.tsx:812:  // rewarded ad was watched fully. Falls back to the existing instant-credit
+source-reference/src/App.tsx:813:  // behaviour if the native Unity Ads bridge isn't available (e.g. web preview).
+source-reference/src/App.tsx:814:  const handleWatchRewardedAdStore = () => {
+source-reference/src/App.tsx:833:    showNativeRewardedAd({
+source-reference/src/App.tsx:841:        // Native Unity Ads bridge not present (e.g. running in a regular browser) -
+source-reference/src/App.tsx:1100:          setShowAdModal(true);
+source-reference/src/App.tsx:1253:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1265:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1275:              onOpenAdModal={handleWatchRewardedAdStore}
+source-reference/src/App.tsx:1290:              onOpenAdModal={handleOpenAdModal}
+source-reference/src/App.tsx:1357:        <AdModal
+source-reference/src/App.tsx:1358:          isOpen={showAdModal}
+source-reference/src/App.tsx:1359:          onClose={() => setShowAdModal(false)}
+source-reference/src/App.tsx:1363:          adUnitId={adminConfig.ads.rewardedAdId}
+source-reference/src/index.css:222:/* Suppress Adsterra Social Bar, Floating Notification Ads & In-page Push Ads */
+source-reference/src/utils/adPreloadManager.ts:18:  rewardedAdCooldownSeconds: number;
+source-reference/src/utils/adPreloadManager.ts:124:    rewardedAdCooldownSeconds: 30,
+source-reference/src/utils/openAdLink.ts:1:export const DEFAULT_ADSTERRA_SMARTLINK = 'https://doubtfulimpatient.com/bhetpw4me?key=b10856b9df41e998764e3e76a118f915';
+source-reference/src/utils/openAdLink.ts:10:  const targetUrl = (url || DEFAULT_ADSTERRA_SMARTLINK).trim();
+source-reference/src/utils/openAdLink.ts:61: * Adsterra Popunder / SmartLink Opener
+source-reference/src/utils/openAdLink.ts:63:export const openAdsterraPopunder = (url?: string): boolean => {
+source-reference/src/utils/openAdLink.ts:64:  console.log('[Adsterra] Opening Smartlink Popunder:', url || DEFAULT_ADSTERRA_SMARTLINK);
+source-reference/src/utils/openAdLink.ts:65:  return openExternalAdLink(url || DEFAULT_ADSTERRA_SMARTLINK);
+source-reference/src/utils/openAdLink.ts:68:export const showRewardedAd = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:69:export const showAppCreator24Interstitial = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:70:export const triggerAppAd = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:71:export const triggerNativeRewardedAd = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:72:export const watchAdClick = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:73:export const showAppCreator24Rewarded = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:77:  (window as any).openAdsterraPopunder = openAdsterraPopunder;
+source-reference/src/utils/openAdLink.ts:78:  (window as any).watchAdClick = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:79:  (window as any).triggerNativeRewardedAd = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:80:  (window as any).triggerAppAd = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:81:  (window as any).showInterstitial = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:82:  (window as any).showRewarded = () => openAdsterraPopunder();
+source-reference/src/utils/openAdLink.ts:83:  (window as any).showRewardedAd = () => openAdsterraPopunder();
+source-reference/src/utils/storage.ts:156:        rewardedAdCooldownSeconds: config.ads.rewardAdDurationSeconds,
+source-reference/src/utils/storage.ts:328:            rewardedAdCooldownSeconds: merged.ads.rewardAdDurationSeconds,
+source-reference/src/utils/storage.ts:1096:            rewardedAdCooldownSeconds: data.ads.rewardAdDurationSeconds,
+source-reference/src/utils/authService.ts:175:        status: 'REWARDED',
+source-reference/src/utils/defaultAdminConfig.ts:34:    provider: 'Adsterra',
+source-reference/src/utils/defaultAdminConfig.ts:38:    rewardedAdId: 'ca-app-pub-7534769036423854/5224354917',
+source-reference/src/utils/defaultAdminConfig.ts:39:    unityGameId: '800274636',
+source-reference/src/utils/defaultAdminConfig.ts:40:    unityRewardedPlacementId: 'Rewarded_Android',
+source-reference/src/utils/nativeAdsBridge.ts:3:// Unity LevelPlay (Unity Ads) Rewarded Video SDK via a Capacitor plugin.
+source-reference/src/utils/nativeAdsBridge.ts:6:// code. When running inside the Android app, calling showRewardedAd() will:
+source-reference/src/utils/nativeAdsBridge.ts:7://   1. Ask native Android to show a real Unity Rewarded Video ad.
+source-reference/src/utils/nativeAdsBridge.ts:18:        UnityRewardedAds?: {
+source-reference/src/utils/nativeAdsBridge.ts:19:          showRewardedAd: () => Promise<{ status: string; reason?: string }>;
+source-reference/src/utils/nativeAdsBridge.ts:35:      window.Capacitor.Plugins.UnityRewardedAds
+source-reference/src/utils/nativeAdsBridge.ts:42:interface ShowRewardedAdCallbacks {
+source-reference/src/utils/nativeAdsBridge.ts:49: * Shows the Unity rewarded video ad through the native Android bridge.
+source-reference/src/utils/nativeAdsBridge.ts:52:export const showNativeRewardedAd = async ({
+source-reference/src/utils/nativeAdsBridge.ts:56:}: ShowRewardedAdCallbacks): Promise<void> => {
+source-reference/src/utils/nativeAdsBridge.ts:63:    const plugin = window.Capacitor!.Plugins!.UnityRewardedAds!;
+source-reference/src/utils/nativeAdsBridge.ts:64:    const result = await plugin.showRewardedAd();
+source-reference/src/utils/nativeAdsBridge.ts:65:    if (result && result.status === 'REWARDED') {
+source-reference/src/screens/HomeScreen.tsx:11:  onOpenAdModal?: () => void;
+source-reference/src/screens/HomeScreen.tsx:152:  onOpenAdModal,
+source-reference/src/screens/CoinsScreen.tsx:16:  onOpenAdModal: () => void;
+source-reference/src/screens/CoinsScreen.tsx:26:  onOpenAdModal,
+source-reference/src/screens/CoinsScreen.tsx:77:    onOpenAdModal();
+source-reference/src/screens/CoinsScreen.tsx:252:            id="watch-rewarded-ad-store-btn"
+source-reference/src/screens/CoinsScreen.tsx:583:                  +{wallet.totalReferralCoinsEarned || (referralHistory.filter(h => h.status === 'REWARDED').length * referrerBonusCoins)} Coins Earned
+source-reference/src/screens/CoinsScreen.tsx:606:                        {item.status === 'REWARDED' ? (
+source-reference/src/screens/OrdersScreen.tsx:15:  onOpenAdModal?: () => void;
+source-reference/src/screens/OrdersScreen.tsx:25:  onOpenAdModal,
+source-reference/src/screens/HashtagsScreen.tsx:14:  onOpenAdModal?: () => void;
+source-reference/src/screens/HashtagsScreen.tsx:38:  onOpenAdModal,
