@@ -1,0 +1,6 @@
+app/google-services.json
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
